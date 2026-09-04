@@ -1,8 +1,9 @@
 // swift-tools-version:6.1
+
 import PackageDescription
 
 let package = Package(
-    name: "MediaMelon-AVPlayer-SDK-test",
+    name: "MediaMelon-AVPlayer-SDK-IMA-test",
 
     platforms: [
         .iOS(.v15),
@@ -10,25 +11,15 @@ let package = Package(
     ],
 
     products: [
-        // QoE version
-        .library(
-            name: "MediaMelon-AVPlayer-SDK-test",
-            targets: ["MediaMelon_AVPlayer_SDK_QoE"]
-        ),
-
-        // IMA version
         .library(
             name: "MediaMelon-AVPlayer-SDK-IMA-test",
-            targets: ["MediaMelon_AVPlayer_SDK_IMA"]
+            targets: [
+                "MediaMelon_AVPlayer_SDK_IMA"
+            ]
         )
     ],
 
     dependencies: [
-        .package(
-            url: "https://github.com/MediamelonSDK/mm-ios-qoe-sdk",
-            exact: "2.16.0"
-        ),
-
         .package(
             url: "https://github.com/MediamelonSDK/mm-ios-qoe-sdk-ima",
             exact: "2.16.0"
@@ -36,40 +27,17 @@ let package = Package(
     ],
 
     targets: [
-
-        // MARK: - Common implementation
-
-        .target(
-            name: "MediaMelon_AVPlayer_SDK_Core",
-            path: "Source/Core"
-        ),
-
-        // MARK: - QoE SDK
-
-        .target(
-            name: "MediaMelon_AVPlayer_SDK_QoE",
-            dependencies: [
-                "MediaMelon_AVPlayer_SDK_Core",
-                .product(
-                    name: "MediaMelonQoE",
-                    package: "mm-ios-qoe-sdk"
-                )
-            ],
-            path: "Source/QoE"
-        ),
-
-        // MARK: - IMA SDK
-
         .target(
             name: "MediaMelon_AVPlayer_SDK_IMA",
+
             dependencies: [
-                "MediaMelon_AVPlayer_SDK_Core",
                 .product(
                     name: "MediaMelonIMA",
                     package: "mm-ios-qoe-sdk-ima"
                 )
             ],
-            path: "Source/IMA"
+
+            path: "Source"
         )
     ]
 )
