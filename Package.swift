@@ -55,7 +55,7 @@ let package = Package(
                     package: "mm-ios-qoe-sdk"
                 )
             ],
-            path: "Source"
+            path: "Source/QoE"
         ),
 
         // MARK: - IMA SDK
@@ -69,7 +69,7 @@ let package = Package(
                     package: "mm-ios-qoe-sdk-ima"
                 )
             ],
-            path: "Source"
+            path: "Source/IMA"
         )
     ]
 )
