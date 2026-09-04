@@ -55,7 +55,7 @@ let package = Package(
                     package: "mm-ios-qoe-sdk"
                 )
             ],
-            path: "Sources/MediaMelon_AVPlayer_SDK_QoE"
+            path: "Source"
         ),
 
         // MARK: - IMA SDK
@@ -69,7 +69,7 @@ let package = Package(
                     package: "mm-ios-qoe-sdk-ima"
                 )
             ],
-            path: "Sources/MediaMelon_AVPlayer_SDK_IMA"
+            path: "Source"
         )
     ]
 )
