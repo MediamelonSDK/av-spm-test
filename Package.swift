@@ -41,7 +41,7 @@ let package = Package(
 
         .target(
             name: "MediaMelon_AVPlayer_SDK_Core",
-            path: "Source"
+            path: "Source/Core"
         ),
 
         // MARK: - QoE SDK
